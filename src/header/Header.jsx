@@ -1,5 +1,6 @@
 import React from 'react';
 import Menu from './Menu';
+import Clock from '../clock/Clock';
 export default class Header extends React.Component {
     render() {
         if (this.props.title) {
@@ -7,6 +8,9 @@ export default class Header extends React.Component {
                 <h3 className='title'>{this.props.title}</h3>
                 <div className='e'>
                     <Menu menu={menu}></Menu>
+                </div>
+                <div className='time'>
+                    <Clock/>
                 </div>
             </div>
         }
