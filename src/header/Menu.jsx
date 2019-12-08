@@ -9,14 +9,12 @@ export default class Menu extends React.Component {
     render() {
         return <div >
             <ul className='menu-list'>
-            <li onClick={(e) => { this.clickedLi(e) }} className='menu-item'>{this.props.menu.item[0]}</li>
-            {this.props.menu.item.length &&
-                <li className='menu-item'>{this.props.menu.item[1]}</li>
-            }
-
-            <li className='menu-item'>{this.props.menu.item[2]}</li>
-        </ul>
-        <Form1></Form1>
+                <li onClick={(e) => { this.clickedLi(e) }} className='menu-item'>{this.props.menu.item[0]}</li>
+                {this.props.menu.item.length &&
+                    <li className='menu-item'>{this.props.menu.item[1]}</li>
+                }
+                <li className='menu-item'>{this.props.menu.item[2]}</li>
+            </ul>
         </div>
     }
     clickedLi(e) {
