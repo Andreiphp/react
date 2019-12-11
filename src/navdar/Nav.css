@@ -2,3 +2,6 @@ nav {
     display: block;
     width: 150px;
 }
+a.activeLink {
+    color: brown;
+}
