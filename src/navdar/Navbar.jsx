@@ -10,13 +10,16 @@ export default class Navbar extends React.Component {
     render() {
         return <nav>
             <div className='profile' >
-                <NavLink  to="/profile" activeClassName='is-active'>Profile</NavLink>
+                <NavLink exact  to="/profile" activeClassName="is-active">Профиль</NavLink>
             </div>
             <div className='messages' >
-                <NavLink to="/messages" activeClassName='is-active'>Messages</NavLink>
+                <NavLink to="/messages" activeClassName="is-active">Сообщения</NavLink>
             </div>
             <div className='news' >
-                <NavLink to="/news" activeClassName='is-active'>News</NavLink>
+                <NavLink to="/news" activeClassName="is-active">Новости</NavLink>
+            </div>
+            <div className='users' >
+                <NavLink to="/users" activeClassName="is-active">Пользователи</NavLink>
             </div>
         </nav>
     }

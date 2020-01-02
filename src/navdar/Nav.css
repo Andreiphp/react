@@ -1,7 +1,21 @@
 nav {
     display: block;
     width: 150px;
+    font-size: 16px;
 }
 a.activeLink {
     color: brown;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    transition: 0.3s;
+    color: brown;
+    background-color: burlywood;
+}
+.is-active {
+    color: chartreuse;
 }

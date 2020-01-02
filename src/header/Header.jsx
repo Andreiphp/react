@@ -1,26 +1,44 @@
 import React from 'react';
-import Menu from './Menu';
-import './Header.css'
-export default class Header extends React.Component {
+import './Header.css';
+import { connect } from 'react-redux';
+class MenuItem extends React.Component {
+    constructor(props) {
+        super(props)
+    }
     render() {
-        if (this.props.title) {
-            return <div>
-                <h3 className='title'>{this.props.title}</h3>
-                <div className='e'>
-                    <Menu menu={menu}></Menu>
-                </div>
-            </div>
-        }
-        return element
+        return <li>{this.props.item}</li>
     }
 }
-class Menus {
-    item = ['Главнпая', 'Портфолио', 'Контакты'];
-    constructor() {
-
+class Header_Menu extends React.Component {
+    constructor(props) 
+    {
+        super(props);
+        console.log(this.props)
     }
-
-
+    render() {
+        return <ul className='menu'>
+            {this.props.menu.map(item => {
+                return <MenuItem key={item} item={item} />
+            })}
+        </ul>
+    }
 }
-let menu = new Menus();
-let element = React.createElement('h1', { className: 'test' }, 'testto');
+const mapStateTooprops = (state) => {
+    return {
+        menu: state.menu
+    }
+};
+
+// const mapDispatchTooProps = (dispatch) => {
+//     return {
+//         sendMessage: () => {
+//             dispatch(sendMessageCreator())
+//         },
+//         updateMessage: (val) => {
+//             dispatch(updateMessageCreator(val))
+//         }
+
+//     }
+// }
+const Header = connect(mapStateTooprops, null)(Header_Menu);
+export default Header;

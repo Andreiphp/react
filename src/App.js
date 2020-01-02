@@ -2,24 +2,29 @@ import React from 'react'
 import './App.css';
 import Header from './header/Header';
 import Navbar from './navdar/Navbar';
-import Dialogs from './dialogs/Dialogs';
-import Messages from './messages/Messages';
-import { Route, BrowserRouter } from 'react-router-dom';
-function App() {
+import MessagesContainer from './messages/messages-container';
+import ProfileContainer from './profile/profile-container';
+import NewsContainer from './news/news-container';
+import UsersContainer from './users/users-container';
+import { Route } from 'react-router-dom';
+function App(props) {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Header title='React' />
-        <div className='wrapper'>
+    <div className="App">
+      <Header />
+      <div className='content'>
+        <div className='side-bar'>
           <Navbar />
+        </div>
+        <div className='wrapper'>
           <div className='contents'>
-            <Route path='/profile' component={Dialogs} />
-            <Route path='/messages' component={Messages} />
+            <Route path='/profile' render={() => <ProfileContainer />} />
+            <Route path='/messages' render={() => <MessagesContainer />} />
+            <Route path='/news' render={() => <NewsContainer />} />
+            <Route path='/users' render={() => <UsersContainer />} />
           </div>
         </div>
       </div>
-    </BrowserRouter>
-
+    </div>
   );
 }
 

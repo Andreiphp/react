@@ -1,0 +1,12 @@
+
+.users-p-c {
+    display: flex;
+    align-items: center;
+}
+.users-p-c li {
+    cursor: pointer;
+}
+.user-selected-page {
+    color: brown;
+
+}

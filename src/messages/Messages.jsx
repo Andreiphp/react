@@ -1,27 +1,30 @@
 import React from 'react';
-const Posts = (props) => {
-    return (
-       <div>
-            <p>{props.name}</p>
-            <span>{props.likesCount}</span>
-       </div>
-    )
-}
+import './Messages.css';
 export default class Messages extends React.Component {
     constructor(props) {
         super(props);
-        this.mess = [
-            { id: 1, name: 'hi', likesCount: 11 },
-            { id: 2, name: 'hy hy hy', likesCount: 12 },
-            { id: 3, name: 'ho ho ho ho', likesCount: 13 }
-        ]
+        this.onSendMessages = this.onSendMessages.bind(this);
+        this.onUpmess = this.onUpmess.bind(this);
+        console.log(this.props)
+    }
+    onSendMessages() {
+        this.props.sendMessage();
+    }
+    onUpmess(e) {
+        let body = e.target.value;
+        this.props.updateMessage(body);
     }
     render() {
-        return <div>
-            <h1>Messages</h1>
-            <div><Posts name={this.mess[0].name} likesCount={this.mess[0].likesCount}/></div>
-            <div><Posts name={this.mess[1].name}  likesCount={this.mess[1].likesCount}/></div>
-            <div><Posts name={this.mess[2].name}  likesCount={this.mess[2].likesCount}/></div>
+        return <div className='mess'>
+            {this.props.mess.message.map(mess => {
+                return <div>
+                    <span>{mess.name}</span>
+                </div>
+            })}
+            <div>
+                <div><textarea value={this.props.mess.newMessageBody} onChange={this.onUpmess} placeholder='Enter message'></textarea></div>
+                <div><button onClick={this.onSendMessages}>Отправить</button></div>
+            </div>
         </div>
     }
 }

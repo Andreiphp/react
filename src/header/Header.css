@@ -3,3 +3,12 @@
     justify-content: center;
     align-items: center;
 }
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 48px;
+    width: 100%;
+    background-color: burlywood;
+    color: cornflowerblue;
+}
