@@ -4,3 +4,20 @@
 ul {
     list-style-type: none;
 }
+.profile-avatar {
+    width: 349px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.profile-avatar img {
+    display: block;
+    width: 150px;
+    height: 150px;
+}
+.profile-avatar .profile-name {
+    color: blue;
+    font-size: large;
+    line-height: 16px;
+    text-decoration: brown;
+}

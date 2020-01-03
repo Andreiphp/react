@@ -1,5 +1,6 @@
 import React from 'react';
 import './users.css'
+import {NavLink} from 'react-router-dom';
 export default class Users extends React.Component {
     constructor(props) {
         super(props);
@@ -22,7 +23,10 @@ export default class Users extends React.Component {
                 {this.props.users.map(user => {
                     return <div key={user.id}>
                         <div className="users-avatar"></div>
-                        <div className="users-name">{user.name}</div>
+                        <NavLink to={'/profile/' + user.id}>
+                               <div className="users-name">{user.name}</div>
+                        </NavLink>
+                     
 
                         <div className="users-btn">
                             {!user.folowed ?

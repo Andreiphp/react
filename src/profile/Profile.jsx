@@ -17,12 +17,21 @@ export default class Profile extends React.Component {
     render() {
         return <div className='profile'>
             <p>Страница профиля</p>
+            {this.props.profile ? <div className="profile-main">
+                <div className="profile-avatar">
+                    <img src={this.props.profile.photos.small}></img>
+                    <div className="profile-name">{this.props.profile.fullName}</div>
+                </div>
+                <div className="profile-contacts" >
+                    
+                </div>
+            </div> : ''}
             <div className='send'>
                 <textarea onChange={this.Change} ref={this.textA} value={this.props.newPstsText}></textarea>
                 <button onClick={this.send} type='button'>отправить</button>
             </div>
             <div className="avatar">
-                <img src></img>
+                <img src=""></img>
             </div>
             <ul>
                 {this.props.posts.map(post => {
